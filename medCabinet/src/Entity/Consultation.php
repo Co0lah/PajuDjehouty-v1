@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ConsultationRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -49,6 +51,16 @@ class Consultation
      * @ORM\Column(type="float")
      */
     private $montant;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Ordonnance::class, mappedBy="consultation")
+     */
+    private $ordonnances;
+
+    public function __construct()
+    {
+        $this->ordonnances = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -123,6 +135,36 @@ class Consultation
     public function setMontant(float $montant): self
     {
         $this->montant = $montant;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Ordonnance[]
+     */
+    public function getOrdonnances(): Collection
+    {
+        return $this->ordonnances;
+    }
+
+    public function addOrdonnance(Ordonnance $ordonnance): self
+    {
+        if (!$this->ordonnances->contains($ordonnance)) {
+            $this->ordonnances[] = $ordonnance;
+            $ordonnance->setConsultation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrdonnance(Ordonnance $ordonnance): self
+    {
+        if ($this->ordonnances->removeElement($ordonnance)) {
+            // set the owning side to null (unless already changed)
+            if ($ordonnance->getConsultation() === $this) {
+                $ordonnance->setConsultation(null);
+            }
+        }
 
         return $this;
     }

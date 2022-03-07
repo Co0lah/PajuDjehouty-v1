@@ -1,0 +1,6 @@
+MedCabinet -> php -S 127.0.0.1:8000 -t public
+eMedCabinet -> ng serve
+
+* Ajouter Lat & Long table medecin en complément d'adresse..
+* Clean l'UX, useless sections (ex: serv, spec, meds)... 
+* Fix issue preloader si use 'template.component.html'..

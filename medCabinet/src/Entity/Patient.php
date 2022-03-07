@@ -32,11 +32,6 @@ class Patient
     private $prenom;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $age;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $adresse;
@@ -157,20 +152,18 @@ class Patient
     private $qualite;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Nationalite::class, inversedBy="patients")
+     * @ORM\ManyToOne(targetEntity=Nationalite::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $nationalite;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Domaine::class, inversedBy="patients")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity=Domaine::class)
      */
     private $domaine;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Assureur::class, inversedBy="patients")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity=Assureur::class)
      */
     private $assureur;
 
@@ -188,6 +181,11 @@ class Patient
      * @ORM\OneToMany(targetEntity=Reglement::class, mappedBy="patient")
      */
     private $reglements;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $dateNaissance;
 
     public function __construct()
     {
@@ -221,18 +219,6 @@ class Patient
     public function setPrenom(string $prenom): self
     {
         $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    public function getAge(): ?int
-    {
-        return $this->age;
-    }
-
-    public function setAge(int $age): self
-    {
-        $this->age = $age;
 
         return $this;
     }
@@ -647,6 +633,18 @@ class Patient
                 $reglement->setPatient(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDateNaissance(): ?\DateTimeInterface
+    {
+        return $this->dateNaissance;
+    }
+
+    public function setDateNaissance(?\DateTimeInterface $dateNaissance): self
+    {
+        $this->dateNaissance = $dateNaissance;
 
         return $this;
     }

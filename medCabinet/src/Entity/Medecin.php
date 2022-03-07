@@ -65,13 +65,13 @@ class Medecin
     private $email;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Specialite::class, inversedBy="medecins")
+     * @ORM\ManyToOne(targetEntity=Specialite::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $specialite;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="medecins")
+     * @ORM\ManyToOne(targetEntity=Categorie::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie;
@@ -80,6 +80,16 @@ class Medecin
      * @ORM\Column(type="string", length=255)
      */
     private $fax;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $genre;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Nationalite::class)
+     */
+    private $nationalite;
 
     public function getId(): ?int
     {
@@ -226,6 +236,30 @@ class Medecin
     public function setFax(string $fax): self
     {
         $this->fax = $fax;
+
+        return $this;
+    }
+
+    public function getGenre(): ?string
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(?string $genre): self
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    public function getNationalite(): ?string
+    {
+        return $this->nationalite;
+    }
+
+    public function setNationalite(?string $nationalite): self
+    {
+        $this->nationalite = $nationalite;
 
         return $this;
     }

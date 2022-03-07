@@ -1174,6 +1174,10 @@ section {
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
+.testimonials {
+  height: fit-content;
+}
+
 .testimonials .testimonial-wrap {
   padding-left: 50px;
 }
