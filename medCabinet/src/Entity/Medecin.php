@@ -252,12 +252,12 @@ class Medecin
         return $this;
     }
 
-    public function getNationalite(): ?string
+    public function getNationalite(): ?Nationalite
     {
         return $this->nationalite;
     }
 
-    public function setNationalite(?string $nationalite): self
+    public function setNationalite(?Nationalite $nationalite): self
     {
         $this->nationalite = $nationalite;
 

@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule} from '@angular/common/http';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { AddPatientComponent } from './patient/add-patient/add-patient.component';
 import { ListPatientComponent } from './patient/list-patient/list-patient.component';
@@ -32,6 +36,8 @@ import { ListQualiteComponent } from './qualite/list-qualite/list-qualite.compon
 import { TemplateComponent } from './template/template.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ToastrModule } from 'ngx-toastr';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -67,9 +73,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [DatePipe, { provide: MAT_DIALOG_DATA, useValue:{}},
+    {provide: MatDialogRef, useValue: {}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

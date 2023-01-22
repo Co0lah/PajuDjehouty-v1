@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AddPatientComponent } from './patient/add-patient/add-patient.component';
 import { ListPatientComponent } from './patient/list-patient/list-patient.component';
-import { ListMedecinComponent } from './medecin/list-medecin/list-medecin.component';
 import { AddMedecinComponent } from './medecin/add-medecin/add-medecin.component';
+import { ListMedecinComponent } from './medecin/list-medecin/list-medecin.component';
 import { AddCategorieComponent } from './categorie/add-categorie/add-categorie.component';
 import { ListCategorieComponent } from './categorie/list-categorie/list-categorie.component';
-import { ListDomaineComponent } from './domaine/list-domaine/list-domaine.component';
 import { AddDomaineComponent } from './domaine/add-domaine/add-domaine.component';
+import { ListDomaineComponent } from './domaine/list-domaine/list-domaine.component';
 import { AddSpecialiteComponent } from './specialite/add-specialite/add-specialite.component';
 import { ListSpecialiteComponent } from './specialite/list-specialite/list-specialite.component';
 import { AddConsultationComponent } from './consultation/add-consultation/add-consultation.component';
@@ -26,6 +26,7 @@ import { ListOrdonnanceComponent } from './ordonnance/list-ordonnance/list-ordon
 import { AddQualiteComponent } from './qualite/add-qualite/add-qualite.component';
 import { ListQualiteComponent } from './qualite/list-qualite/list-qualite.component';
 import { TemplateComponent } from './template/template.component';
+
 const routes: Routes = [
   {
     path: '', component: TemplateComponent, children: [

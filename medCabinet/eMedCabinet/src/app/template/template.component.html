@@ -7,9 +7,9 @@
         </div>
         <div class="d-none d-lg-flex social-links align-items-center">
             <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://yameogocouliga.web.app/" class="facebook"><i class="bi bi-facebook"></i></a>
             <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/couliga-yameogo/" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
     </div>
 </div>
@@ -25,49 +25,40 @@
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
                 <!-- <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li> -->
-                <li class="dropdown"><a href="/rdvs"><span>Rendez-Vous</span> <i class="bi bi-chevron-down"></i></a>
+                <li class="dropdown"><a href="#"><span>Rendez-Vous</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a class="nav-link scrollto" href="#">dd</a></li>
-                        <li><a class="nav-link scrollto" href="#">dd</a></li>
-                        <li><a class="nav-link scrollto" href="#">dd</a></li>
+                        <li><a class="nav-link scrollto" routerLink="/rdvs">Vos rendez-vous</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>Consultation</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a class="nav-link scrollto" href="#services">dd</a></li>
-                        <li><a class="nav-link scrollto" href="#departments">dd</a></li>
-                        <li><a class="nav-link scrollto" href="#doctors">dd</a></li>
+                        <li><a class="nav-link scrollto" href="#consultations">Mes prochaines consultations</a></li>
+                        <li><a class="nav-link scrollto" href="#consultations">Mes anciennes consultations</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>Ordonnace</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a class="nav-link scrollto" href="#services">dd</a></li>
-                        <li><a class="nav-link scrollto" href="#departments">dd</a></li>
-                        <li><a class="nav-link scrollto" href="#doctors">dd</a></li>
+                        <li><a class="nav-link scrollto" href="#ordonnances">Mes ordonnances</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="#"><span>Reglement</span> <i class="bi bi-chevron-down"></i></a>
+                <li class="dropdown"><a href="#"><span>Règlement</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a class="nav-link scrollto" href="#services">dd</a></li>
-                        <li><a class="nav-link scrollto" href="#departments">dd</a></li>
-                        <li><a class="nav-link scrollto" href="#doctors">dd</a></li>
+                        <li><a class="nav-link scrollto" href="#paiements">Mes paiements</a></li>
+                        <li><a class="nav-link scrollto" href="#factures">Mes factures</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>Paramètres</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a routerLink="/patients" routerLinkActive="active">Patient</a></li>
+                        <li><a routerLink="/patients" routerLinkActive="active">Patients</a></li>
                         <li><a routerLink="/medecins" routerLinkActive="active">Medecins</a></li>
                         <li class="dropdown"><a href="#"><span>Paramètrages</span> <i
                                     class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">Deep Drop Down 1</a></li>
-                                <li><a href="#">Deep Drop Down 2</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
-                                <li><a href="#">Deep Drop Down 4</a></li>
-                                <li><a href="#">Deep Drop Down 5</a></li>
+                                <li><a routerLink="/specialites" routerLinkActive="active">Spécialités</a></li>
+                                <li><a routerLink="/categories" routerLinkActive="active">Catégories</a></li>
                             </ul>
                         </li>
-                        <li><a routerLink="/medecins" routerLinkActive="active">Medicaments</a></li>
+                        <li><a routerLink="#" routerLinkActive="active">Medicaments</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#hero"><span>A propos</span> <i class="bi bi-chevron-down"></i></a>
@@ -83,7 +74,7 @@
         </nav>
         <!-- .navbar -->
 
-        <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Prendre</span>
+        <a href="/rdvs" class="appointment-btn scrollto"><span class="d-none d-md-inline">Prendre</span>
             Rendez-Vous</a>
 
     </div>
@@ -93,11 +84,16 @@
 <section id="hero" class="d-flex align-items-center">
     <div class="container">
         <h1>Bienvenue à MedCabinet</h1>
-        <h2>Nous sommes une équipe de médecins hautement qualifiés</h2>
-        <h2>et avons recours à une medecine traditionnelle</h2>
+        <h2>Nous sommes une équipe de médecins <b>Hautement Qualifiés</b></h2>
+        <h2>ayant recours à une <b>Medecine Moderne</b> et <b>Traditionnelle</b></h2>
         <a href="#about" class="btn-get-started scrollto">Découvrez MedCabinet</a>
     </div>
 </section><!-- End Hero -->
+
+<!-- DISPLAYS LA VUE DES COMPONENTS HTML -->
+<div class="container" style="background-color: rgb(136, 125, 125);">
+    <router-outlet></router-outlet>
+</div>
 
 <main id="main">
 
@@ -112,8 +108,8 @@
                         <p>
                             MedCabinet c'est l’ensemble
                             de toutes les connaissances, usages de substances, mesures et pratiques explicables ou
-                            non, basés sur les fondements socioculturels et religieux d’une collectivité donnée, ainsi
-                            que sur les expériences vécues et les observations. Ces dernières transmises de génération à
+                            non, basés sur les fondements socioculturels d’une collectivité donnée, ainsi
+                            que sur les expériences vécues et les observations. <br>Ces dernières transmises de génération en
                             génération,
                             oralement ou par écrit, et utilisées pour diagnostiquer, prévenir ou éliminer un
                             déséquilibre du bien-être physique, mental, social ou spirituel.
@@ -165,7 +161,7 @@
             <div class="row">
                 <div
                     class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
-                    <a href="https://www.youtube.com/watch?v=ZBX3pVEPkBY" class="glightbox play-btn mb-4"></a>
+                    <a href="https://www.youtube.com/watch?v=QwtT9CmTuac" class="glightbox play-btn mb-4"></a>
                 </div>
 
                 <div
@@ -999,7 +995,7 @@
                     <h4>Liens Utiles</h4>
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Accueil</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">A propos</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://www.linkedin.com/in/couliga-yameogo/">A propos</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Termes services</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Conditions générales</a></li>
@@ -1009,10 +1005,10 @@
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Notre partenaire</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">YAMEO Development</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://yameogocouliga.web.app/">Web Design</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://yameogocouliga.web.app/">YAMEO Development</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://yameogocouliga.web.app/">Product Management</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://www.linkedin.com/in/couliga-yameogo/">Marketing</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
                     </ul>
                 </div>
@@ -1045,10 +1041,10 @@
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">
             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/couliga-yameogo/" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/couliga-yameogo/" class="instagram"><i class="bx bxl-instagram"></i></a>
             <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/couliga-yameogo/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
     </div>
 </footer><!-- End Footer -->

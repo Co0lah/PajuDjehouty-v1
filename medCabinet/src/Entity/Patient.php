@@ -117,12 +117,12 @@ class Patient
     private $medecinTraitant;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $datePremierRdv;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $dateDernierRdv;
 
@@ -142,7 +142,7 @@ class Patient
     private $regimeCnam;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $dateValidite;
 
@@ -152,8 +152,7 @@ class Patient
     private $qualite;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Nationalite::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $nationalite;
 
@@ -511,12 +510,12 @@ class Patient
         return $this;
     }
 
-    public function getNationalite(): ?Nationalite
+    public function getNationalite(): ?string
     {
         return $this->nationalite;
     }
 
-    public function setNationalite(?Nationalite $nationalite): self
+    public function setNationalite(?string $nationalite): self
     {
         $this->nationalite = $nationalite;
 

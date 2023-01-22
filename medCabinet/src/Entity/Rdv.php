@@ -30,7 +30,7 @@ class Rdv
     private $annee;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $dateRdv;
 
